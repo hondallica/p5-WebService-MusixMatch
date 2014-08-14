@@ -52,6 +52,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/hondallica/p5-WebService-MusixMatch/issues"
+      },
+      "homepage" : "https://github.com/hondallica/p5-WebService-MusixMatch",
+      "repository" : {
+         "url" : "https://github.com/hondallica/p5-WebService-MusixMatch.git",
+         "web" : "https://github.com/hondallica/p5-WebService-MusixMatch"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:HONDALLIC"
 }
