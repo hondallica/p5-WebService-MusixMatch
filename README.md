@@ -1,6 +1,6 @@
 # NAME
 
-WebService::MusixMatch - It's new $module
+WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 
 # SYNOPSIS
 
@@ -8,7 +8,11 @@ WebService::MusixMatch - It's new $module
 
 # DESCRIPTION
 
-WebService::MusixMatch is ...
+The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
+
+# SEE ALSO
+
+https://developer.musixmatch.com
 
 # LICENSE
 

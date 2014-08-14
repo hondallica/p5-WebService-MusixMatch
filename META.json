@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "A simple and fast interface to the Musixmatch API",
    "author" : [
       "Hondallica <hondallica@gmail.com>"
    ],

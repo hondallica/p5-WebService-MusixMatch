@@ -34,6 +34,54 @@ has 'http' => (
     },
 );
 
+sub artist_get {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('artist.get', \%query_param);
+}
+
+sub artist_search {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('artist.search', \%query_param);
+}
+
+sub artist_albums_get {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('artist.albums.get', \%query_param);
+}
+
+sub artist_related_get {
+    my ($self, %query_param) = @_;
+    return $self->_make_request('artist.related.get', \%query_param);
+}
+
+
+sub _make_request {
+    my ( $self, $path, $query_param ) = @_;
+
+    my $query = URI->new;
+    $query->query_param( 'apikey', $self->api_key );
+    $query->query_param( 'format', 'json' );
+    map { $query->query_param( $_, $query_param->{$_} ) } keys %$query_param;
+
+    my ($minor_version, $code, $message, $headers, $content) = 
+        $self->http->request(
+            scheme => 'http',
+            host => 'api.musixmatch.com',
+            path_query => "ws/1.1/$path$query",
+            method => 'GET',
+        );
+
+    my $data = decode_json( $content );
+
+    if ( $data->{message}{header}{status_code} != 200 ) {
+        confess $data->{message}{header}{status_code};
+    } else {
+        return $data;
+    }
+}
+
+
+
 
 1;
 __END__
