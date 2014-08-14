@@ -26,7 +26,7 @@ has 'http' => (
     default  => sub {
         my $http = Furl::HTTP->new(
             inet_aton => \&Net::DNS::Lite::inet_aton,
-            agent => 'Net::LastFM::Lite' . $VERSION,
+            agent => 'WebService::MusixMatch' . $VERSION,
             headers => [ 'Accept-Encoding' => 'gzip',],
         );
         $http->env_proxy;
@@ -42,7 +42,7 @@ __END__
 
 =head1 NAME
 
-WebService::MusixMatch - It's new $module
+WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 
 =head1 SYNOPSIS
 
@@ -50,7 +50,11 @@ WebService::MusixMatch - It's new $module
 
 =head1 DESCRIPTION
 
-WebService::MusixMatch is ...
+The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
+
+=head1 SEE ALSO
+
+https://developer.musixmatch.com
 
 =head1 LICENSE
 
