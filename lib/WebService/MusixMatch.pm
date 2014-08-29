@@ -8,6 +8,7 @@ use URI::QueryParam;
 use Carp;
 use Moo;
 use namespace::clean;
+use Data::Dumper;
 our $VERSION = "0.01";
 
 
@@ -29,33 +30,48 @@ has 'http' => (
             agent => 'WebService::MusixMatch' . $VERSION,
             headers => [ 'Accept-Encoding' => 'gzip',],
         );
-        $http->env_proxy;
         return $http;
     },
 );
 
-sub artist_get {
-    my ($self, %query_param) = @_;
-    return $self->_make_request('artist.get', \%query_param);
+
+my @methods = (
+    'chart.artists.get',
+    'chart.tracks.get',
+    'track.search',
+    'track.get',
+    'track.subtitle.get',
+    'track.lyrics.get',
+    'track.snippet.get',
+    'track.lyrics.post',
+    'track.lyrics.feedback.post',
+    'matcher.lyrics.get',
+    'matcher.track.get',
+    'matcher.subtitle.get',
+    'artist.get',
+    'artist.search',
+    'artist.albums.get',
+    'artist.related.get',
+    'album.get',
+    'album.tracks.get',
+    'tracking.url.get',
+    'catalogue.dump.get',
+);
+
+
+for my $method (@methods) {
+    my $code = sub {
+        my ($self, %query_param) = @_;
+        return $self->request($method, \%query_param);
+    };
+    no strict 'refs';
+    my $method_name = $method;
+    $method_name =~ s|\.|_|g;
+    *{$method_name} = $code; 
 }
 
-sub artist_search {
-    my ($self, %query_param) = @_;
-    return $self->_make_request('artist.search', \%query_param);
-}
 
-sub artist_albums_get {
-    my ($self, %query_param) = @_;
-    return $self->_make_request('artist.albums.get', \%query_param);
-}
-
-sub artist_related_get {
-    my ($self, %query_param) = @_;
-    return $self->_make_request('artist.related.get', \%query_param);
-}
-
-
-sub _make_request {
+sub request {
     my ( $self, $path, $query_param ) = @_;
 
     my $query = URI->new;
@@ -63,7 +79,7 @@ sub _make_request {
     $query->query_param( 'format', 'json' );
     map { $query->query_param( $_, $query_param->{$_} ) } keys %$query_param;
 
-    my ($minor_version, $code, $message, $headers, $content) = 
+    my ($minor_version, $status_code, $message, $headers, $content) = 
         $self->http->request(
             scheme => 'http',
             host => 'api.musixmatch.com',
@@ -79,8 +95,6 @@ sub _make_request {
         return $data;
     }
 }
-
-
 
 
 1;
