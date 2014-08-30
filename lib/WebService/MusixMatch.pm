@@ -8,7 +8,6 @@ use URI::QueryParam;
 use Carp;
 use Moo;
 use namespace::clean;
-use Data::Dumper;
 our $VERSION = "0.01";
 
 
@@ -88,7 +87,6 @@ sub request {
         );
 
     my $data = decode_json( $content );
-
     if ( $data->{message}{header}{status_code} != 200 ) {
         confess $data->{message}{header}{status_code};
     } else {
@@ -113,6 +111,32 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 =head1 DESCRIPTION
 
 The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
+
+=head1 METHODS
+
+=head2 chart.artists.get
+=head2 chart.tracks.get
+=head2 track.search
+=head2 track.get
+=head2 track.subtitle.get
+=head2 track.lyrics.get
+=head2 track.snippet.get
+=head2 track.lyrics.post
+=head2 track.lyrics.feedback.post
+=head2 matcher.lyrics.get
+=head2 matcher.track.get
+=head2 matcher.subtitle.get
+=head2 artist.get
+=head2 artist.search
+=head2 artist.albums.get
+=head2 artist.related.get
+=head2 album.get
+=head2 album.tracks.get
+=head2 tracking.url.get
+=head2 catalogue.dump.get
+
+
+
 
 =head1 SEE ALSO
 

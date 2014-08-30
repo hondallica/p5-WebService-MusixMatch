@@ -25,20 +25,21 @@ $Mock_furl_http->mock(
     request => sub {( 1, 200, 'OK', $content_type, $artist_search_response,)},
 );
 my $data = $musixmatch->artist_search(q_artist => 'Metallica');
+is $data->{message}{header}{status_code}, 200;
 is $data->{message}{body}{artist_list}[0]{artist}{artist_name}, 'Metallica';
 is $data->{message}{body}{artist_list}[0]{artist}{artist_twitter_url}, 'https://twitter.com/metallica';
 
 $Mock_furl_http->mock(
     request => sub {( 1, 200, 'OK', $content_type, $artist_albums_get_response,)},
 );
+is $data->{message}{header}{status_code}, 200;
 my $data = $musixmatch->artist_albums_get(artist_id => 64);
-ok $data;
 
 $Mock_furl_http->mock(
     request => sub {( 1, 200, 'OK', $content_type, $artist_related_get_response,)},
 );
+is $data->{message}{header}{status_code}, 200;
 my $data = $musixmatch->artist_related_get(artist_id => 64);
-ok $data;
 
 
 done_testing;

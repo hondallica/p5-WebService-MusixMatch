@@ -17,5 +17,6 @@ my $musixmatch = new WebService::MusixMatch(
 );
 is $musixmatch->api_key, 'DUMMY_API_KEY';
 
+
 done_testing;
 

@@ -10,12 +10,12 @@ my $data = $musixmatch->track_search(
     q => 'One',
     f_artist_id => 64,
 );
-ok $data;
+is $data->{message}{header}{status_code}, 200;
 
 my $data = $musixmatch->track_get(
     'track_id' => 14201829,
 );
-ok $data;
+is $data->{message}{header}{status_code}, 200;
 
 #my $data = $musixmatch->track_subtitle_get(
 #    'track_id' => 14201829,
@@ -25,7 +25,7 @@ ok $data;
 my $data = $musixmatch->track_lyrics_get(
     'track_id' => 7327851,
 );
-ok $data;
+is $data->{message}{header}{status_code}, 200;
 like $data->{message}{body}{lyrics}{lyrics_body}, qr/^Thunder and lightning the gods take revenge/;
 
 my $data = $musixmatch->track_snippet_get(
