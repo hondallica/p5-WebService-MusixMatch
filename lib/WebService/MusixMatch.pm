@@ -107,80 +107,62 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 =head1 SYNOPSIS
 
     use WebService::MusixMatch;
+    my $mxm = new WebService::MusixMatch(apikey => 'YOUR_API_KEY');
+    my $data = $mxm->chart_artist_get( country => 'JP' );
+    $data = $musixmatch->track_search( q => 'One', f_artist_id => 64 );
+    $data = $musixmatch->matcher_track_get(
+        q_artist => 'Metallica',
+        q_album => 'Master of Puppets',
+        q_track => 'One',
+    );
+    $data = $musixmatch->artist_search(q_artist => 'Metallica');
 
 =head1 DESCRIPTION
 
 The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
 
 =head1 METHODS
+These methods usage: https://developer.musixmatch.com/documentation/api-methods
 
 =head3 chart_artists_get
-https://developer.musixmatch.com/documentation/api-reference/artist-chart-get   
 
-    use WebService::MusixMatch;
+=head3 chart_tracks_get
 
-    my $mxm = new WebService::MusixMatch(api_key => 'YOUR_API_KEY');
-    my $data = $mxm->chart_artists_get(
-        country => 'JP',
-    );
+=head3 track_search
 
-=head2 chart.tracks.get
+=head3 track_get
 
+=head3 track_subtitle_get
 
-=head2 track.search
+=head3 track_lyrics_get
 
+=head3 track_snippet_get
 
-=head2 track.get
+=head3 track_lyrics_post
 
+=head3 track_lyrics_feedback_post
 
-=head2 track.subtitle.get
+=head3 matcher_lyrics_get
 
+=head3 matcher_track_get
 
-=head2 track.lyrics.get
+=head3 matcher_subtitle_get
 
+=head3 artist_get
 
-=head2 track.snippet.get
+=head3 artist_search
 
+=head3 artist_albums_get
 
-=head2 track.lyrics.post
+=head3 artist_related_get
 
+=head3 album_get
 
-=head2 track.lyrics.feedback.post
+=head3 album_tracks_get
 
+=head3 tracking_url_get
 
-=head2 matcher.lyrics.get
-
-
-=head2 matcher.track.get
-
-
-=head2 matcher.subtitle.get
-
-
-=head2 artist.get
-
-
-=head2 artist.search
-
-
-=head2 artist.albums.get
-
-
-=head2 artist.related.get
-
-
-=head2 album.get
-
-
-=head2 album.tracks.get
-
-
-=head2 tracking.url.get
-
-
-=head2 catalogue.dump.get
-
-
+=head3 catalogue_dump_get
 
 
 =head1 SEE ALSO

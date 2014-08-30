@@ -5,12 +5,22 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 # SYNOPSIS
 
     use WebService::MusixMatch;
+    my $mxm = new WebService::MusixMatch(apikey => 'YOUR_API_KEY');
+    my $data = $mxm->chart_artist_get( country => 'JP' );
+    $data = $musixmatch->track_search( q => 'One', f_artist_id => 64 );
+    $data = $musixmatch->matcher_track_get(
+        q_artist => 'Metallica',
+        q_album => 'Master of Puppets',
+        q_track => 'One',
+    );
+    $data = $musixmatch->artist_search(q_artist => 'Metallica');
 
 # DESCRIPTION
 
 The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
 
 # METHODS
+These methods usage: https://developer.musixmatch.com/documentation/api-methods
 
 ### chart\_artists\_get
 
