@@ -2,6 +2,9 @@ Revision history for Perl extension WebService-MusixMatch
 
 {{$NEXT}}
 
+0.02 2014-08-30T07:48:56Z
+    - FIX Document
+
 0.01 2014-08-30T07:31:21Z
 
     - original version
