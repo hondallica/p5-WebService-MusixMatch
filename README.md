@@ -13,25 +13,44 @@ The module provides a simple interface to the Bandcamp.com API. To use this modu
 # METHODS
 
 ## chart.artists.get
-=head2 chart.tracks.get
-=head2 track.search
-=head2 track.get
-=head2 track.subtitle.get
-=head2 track.lyrics.get
-=head2 track.snippet.get
-=head2 track.lyrics.post
-=head2 track.lyrics.feedback.post
-=head2 matcher.lyrics.get
-=head2 matcher.track.get
-=head2 matcher.subtitle.get
-=head2 artist.get
-=head2 artist.search
-=head2 artist.albums.get
-=head2 artist.related.get
-=head2 album.get
-=head2 album.tracks.get
-=head2 tracking.url.get
-=head2 catalogue.dump.get
+
+## chart.tracks.get
+
+## track.search
+
+## track.get
+
+## track.subtitle.get
+
+## track.lyrics.get
+
+## track.snippet.get
+
+## track.lyrics.post
+
+## track.lyrics.feedback.post
+
+## matcher.lyrics.get
+
+## matcher.track.get
+
+## matcher.subtitle.get
+
+## artist.get
+
+## artist.search
+
+## artist.albums.get
+
+## artist.related.get
+
+## album.get
+
+## album.tracks.get
+
+## tracking.url.get
+
+## catalogue.dump.get
 
 # SEE ALSO
 
