@@ -7,13 +7,13 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
     use WebService::MusixMatch;
     my $mxm = new WebService::MusixMatch(apikey => 'YOUR_API_KEY');
     my $data = $mxm->chart_artist_get( country => 'JP' );
-    $data = $musixmatch->track_search( q => 'One', f_artist_id => 64 );
-    $data = $musixmatch->matcher_track_get(
+    $data = $mxm->track_search( q => 'One', f_artist_id => 64 );
+    $data = $mxm->matcher_track_get(
         q_artist => 'Metallica',
         q_album => 'Master of Puppets',
         q_track => 'One',
     );
-    $data = $musixmatch->artist_search(q_artist => 'Metallica');
+    $data = $mxm->artist_search(q_artist => 'Metallica');
 
 # DESCRIPTION
 
