@@ -13,52 +13,44 @@ The module provides a simple interface to the Bandcamp.com API. To use this modu
 # METHODS
 
 ### chart\_artists\_get
-https://developer.musixmatch.com/documentation/api-reference/artist-chart-get   
 
-    use WebService::MusixMatch;
+### chart\_tracks\_get
 
-    my $mxm = new WebService::MusixMatch(api_key => 'YOUR_API_KEY');
-    my $data = $mxm->chart_artists_get(
-        country => 'JP',
-    );
+### track\_search
 
-## chart.tracks.get
+### track\_get
 
-## track.search
+### track\_subtitle\_get
 
-## track.get
+### track\_lyrics\_get
 
-## track.subtitle.get
+### track\_snippet\_get
 
-## track.lyrics.get
+### track\_lyrics\_post
 
-## track.snippet.get
+### track\_lyrics\_feedback\_post
 
-## track.lyrics.post
+### matcher\_lyrics\_get
 
-## track.lyrics.feedback.post
+### matcher\_track\_get
 
-## matcher.lyrics.get
+### matcher\_subtitle\_get
 
-## matcher.track.get
+### artist\_get
 
-## matcher.subtitle.get
+### artist\_search
 
-## artist.get
+### artist\_albums\_get
 
-## artist.search
+### artist\_related\_get
 
-## artist.albums.get
+### album\_get
 
-## artist.related.get
+### album\_tracks\_get
 
-## album.get
+### tracking\_url\_get
 
-## album.tracks.get
-
-## tracking.url.get
-
-## catalogue.dump.get
+### catalogue\_dump\_get
 
 # SEE ALSO
 
