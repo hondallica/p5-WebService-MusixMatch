@@ -107,7 +107,9 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 =head1 SYNOPSIS
 
     use WebService::MusixMatch;
+
     my $mxm = new WebService::MusixMatch(apikey => 'YOUR_API_KEY');
+
     my $data = $mxm->chart_artist_get( country => 'JP' );
     $data = $mxm->track_search( q => 'One', f_artist_id => 64 );
     $data = $mxm->matcher_track_get(
