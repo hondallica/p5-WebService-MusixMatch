@@ -17,7 +17,7 @@ has 'api_key' => (
     is => 'rw',
     isa => sub { $_[0] },
     required => 1,
-    default => $ENV{MUSIXMATCH_API_KEY},
+    default => sub { $ENV{MUSIXMATCH_API_KEY} },
 );
 
 has 'http' => (
