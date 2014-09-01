@@ -8,7 +8,7 @@ use URI::QueryParam;
 use Carp;
 use Moo;
 use namespace::clean;
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 
 $Net::DNS::Lite::CACHE = Cache::LRU->new( size => 512 );
