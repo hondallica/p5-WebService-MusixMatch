@@ -19,7 +19,7 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 
 # DESCRIPTION
 
-The module provides a simple interface to the Bandcamp.com API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
+The module provides a simple interface to the MusixMatch API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
 
 # METHODS
 These methods usage: https://developer.musixmatch.com/documentation/api-methods
