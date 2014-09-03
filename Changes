@@ -2,6 +2,9 @@ Revision history for Perl extension WebService-MusixMatch
 
 {{$NEXT}}
 
+0.04 2014-09-03T22:59:12Z
+    - Fix document
+
 0.03 2014-09-01T23:37:58Z
     - Fix invalid default api_key
     - Fix document
