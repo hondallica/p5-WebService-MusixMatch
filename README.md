@@ -19,10 +19,11 @@ WebService::MusixMatch - A simple and fast interface to the Musixmatch API
 
 # DESCRIPTION
 
-The module provides a simple interface to the MusixMatch API. To use this module, you must first sign up at https://developer.musixmatch.com to receive an API key.
+The module provides a simple interface to the MusixMatch API. To use this module, you must first sign up at [https://developer.musixmatch.com](https://developer.musixmatch.com) to receive an API key.
 
 # METHODS
-These methods usage: https://developer.musixmatch.com/documentation/api-methods
+
+These methods usage: [https://developer.musixmatch.com/documentation/api-methods](https://developer.musixmatch.com/documentation/api-methods)
 
 ### chart\_artists\_get
 
@@ -66,7 +67,7 @@ These methods usage: https://developer.musixmatch.com/documentation/api-methods
 
 # SEE ALSO
 
-https://developer.musixmatch.com
+[https://developer.musixmatch.com](https://developer.musixmatch.com)
 
 # LICENSE
 
