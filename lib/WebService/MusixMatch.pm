@@ -26,7 +26,7 @@ has 'http' => (
     default  => sub {
         my $http = Furl::HTTP->new(
             inet_aton => \&Net::DNS::Lite::inet_aton,
-            agent => 'WebService::MusixMatch' . $VERSION,
+            agent => 'WebService::MusixMatch/' . $VERSION,
             headers => [ 'Accept-Encoding' => 'gzip',],
         );
         return $http;
